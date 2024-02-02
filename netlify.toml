@@ -1,0 +1,13 @@
+[build]
+  command = "python manage.py migrate && gunicorn portfolio_daniel_dev.wsgi:application"
+  publish = "portfolio_daniel_dev/portfolio_daniel_developer"
+[context.production.environment]
+  DJANGO_SETTINGS_MODULE = "portfolio_daniel_dev.settings.production"
+  SECRET_KEY = "django-insecure-@z2)p&x4lub&4dv-+p(3f@0%o(p+-=t(2))s61o10)25icodl^"
+  DEBUG = "False"
+
+[context.split1]
+  command = "python manage.py migrate"
+
+[context.split2]
+  command = "python manage.py collectstatic --noinput && gunicorn portfolio_daniel_dev.wsgi:application"

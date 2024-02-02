@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Página Principal</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio_daniel_developer/styles.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+    <script>
+            $(document).ready(function () {
+    var menu = $("#main-menu");
+    var menuIcons = $("#menu-icons");
+
+    $(window).scroll(function () {
+        var scroll = $(this).scrollTop();
+
+        // Añade o quita la clase 'scrolled' según la posición de desplazamiento
+        if (scroll > 50) {
+            menu.addClass("scrolled");
+            menu.addClass(menuIcons);
+            menu.addClass("hide-text");
+        } else {
+            menu.removeClass("scrolled");
+            menu.removeClass(menuIcons)
+            menu.removeClass("hide-text")
+        }
+    });
+});
+    </script>
+</head>
+<body>
+    
+    <div id="sidebar">
+        <!-- Sección de presentación con imagen -->
+        <div id="presentation-section">
+            <img src="{% static 'images/foto_perfil.png' %}" alt="Mi Foto">
+            <h1>Jesús Daniel Nava Alcazar</h1>
+            <p>Desarrollador Junior</p>
+        </div>
+    
+        <!-- Menú de navegación -->
+        <nav id="main-menu">
+            <div id="menu-icons">
+                <i class="fas fa-home"></i>
+                <i class="fas fa-tasks"></i>
+                <i class="fas fa-user"></i>
+                <i class="fas fa-envelope"></i>
+            </div>
+            <ul>
+                <li><a href="{% url 'pagina_principal' %}">Página Principal</a></li>
+                <li><a href="{% url 'lista_proyectos' %}">Proyectos</a></li>
+                <li><a href="#quien-soy">Sobre Mí</a></li>
+                <li><a href="#content">Contáctame</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="curriculum-vitae">
+        <h2>Descarga mi CV aquí:</h2>
+      <div id="cv-button">  
+        <a href="{% static 'documents/cv_02_2024.pdf' %}" download>Descargar Curriculum</a>
+      <div>
+    </div>
+
+    <div id="quien-soy">
+        <h2>¿Quién soy?</h2>
+        <p>
+        ¡Hola, soy Jesús Daniel!, un apasionado desarrollador junior de 29 años con sede en León, Guanajuato, México. Mi enfoque principal es Python, pero también domino HTML, CSS, JavaScript, Kotlin, MySQL, MongoDB, entre otras tecnologías. Certificado por Cisco y OpenBootcamp en Python, mi aprendizaje constante y enfoque autodidacta me permite adaptarme rápidamente a nuevas tecnologías y frameworks. Más que solo código, ofrezco soluciones innovadoras y eficientes. Mi compromiso con la mejora continua y mi pasión por la programación hacen de mí un activo valioso para cualquier proyecto. Descubre más sobre mi trayectoria y proyectos en este portafolio digital. ¡Listo para llevar la innovación al siguiente nivel! ¿Vamos juntos?
+        </p>
+    </div>
+    <div id="technologies-section">
+        <h2>Tecnologías</h2>
+        <div class="technology-item">
+            <img src="{% static 'images/python_icon.png' %}" alt="Python">
+            <p>Python</p>
+        </div>
+        <div class="technology-item">
+            <img src="{% static 'images/javascript_icon.png' %}" alt="JavaScript">
+            <p>JavaScript</p>
+        </div>
+        <div class="technology-item">
+            <img src="{% static 'images/html_icon.png' %}" alt="Html">
+            <p>Html</p>
+        </div>
+        <div class="technology-item">
+            <img src="{% static 'images/css_icon.png' %}" alt="CSS">
+            <p>CSS</p>
+        </div>
+        <div class="technology-item">
+            <img src="{% static 'images/kotlin_icon.png' %}" alt="Kotlin">
+            <p>Kotlin</p>
+        </div>
+        <div class="technology-item">
+            <img src="{% static 'images/sql_icon.png' %}" alt="SQL">
+            <p>SQL</p>
+        </div>
+        <div class="technology-item">
+            <img src="{% static 'images/mysql_icon.png' %}" alt="MySQL">
+            <p>MySQL</p>
+        </div>
+        <div class="technology-item">
+            <img src="{% static 'images/mongodb_icon.png' %}" alt="MongoDB">
+            <p>MongoDB</p>
+        </div>
+        <div id="achievements-section">
+            <div class="achievement-item">
+                <h2>CISCO & PYTHON INSTITUTE</h2>
+                <img src="{% static 'images/Python_Essentials_1_Cisco.png' %}" alt="Certificado 1">
+                <p>Certificado emitido por CISCO a través de Networking Academy. Se puede descargar el certificado completo en pdf, o ver la pagina de validación</p>
+                <a href="{% static 'documents/Python_Essentials_1_Cisco.pdf' %}" download>Descargar Certificado</a>
+                <a href="https://www.credly.com/badges/52c01caf-f3f2-437b-83cd-ea7bd9caedc8/public_url" target="_blank">Ver Web de Validación</a>
+            </div>
+        
+            <div class="achievement-item">
+                <h2>Superskill & OpenBootcamp</h2>
+                <img src="{% static 'images/Python_Junior_Superskill.png' %}" alt="Certificado 2">
+                <p>Certificado emitido por Superskill a traves de OpenBootcamp.</p>
+                <a href="https://superskill.pro/diploma/wa397dly3QVmAoluGCwoCOh4CRxr23N9" target="_blank">Ver Certificado</a>
+            </div>
+        </div>
+        <!-- Agrega más elementos de tecnologías según sea necesario -->
+    </div>
+
+    <div id="content">
+            
+        {% include 'portfolio_daniel_developer/formulario_contacto.html' %}
+    
+        
+        <div id="footer">
+            <div id="footer-text">
+                <p>©Desarrollada por Jesus Daniel 2024</p>
+            </div>
+            <div id="contact-info">
+                <p>dev.daniel.alcazar@gmail.com
+                    <br>
+                    477-569-4198 Telefono y WhatsApp
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <button id="scroll-to-top" title="Subir">
+        <span>&#8593;</span> <!-- Símbolo de flecha hacia arriba -->
+    </button>
+    
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Muestra u oculta el botón según la posición de desplazamiento
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('#scroll-to-top').fadeIn();
+                } else {
+                    $('#scroll-to-top').fadeOut();
+                }
+            });
+    
+            // Sube la página al hacer clic en el botón
+            $('#scroll-to-top').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 600);
+                return false;
+            });
+        });
+    </script>
+
+
+
+        
+    <!-- Otras secciones de tu página -->
+</body>
+</html>

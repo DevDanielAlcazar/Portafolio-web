@@ -1,0 +1,28 @@
+# Virtual environment
+venv/
+
+# Compiled Python files
+*.pyc
+__pycache__/
+
+# .vscode folder
+.vscode/
+
+# Django generated files
+*.sqlite3
+*.pyo
+*.pyc
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+
+# Local development settings
+local_settings.py
+
+# Ignore the 'db.sqlite3' database file in the 'db' directory
+db.sqlite3
+
+# Ignore the 'media' directory, which is used for user-uploaded media files
+media/

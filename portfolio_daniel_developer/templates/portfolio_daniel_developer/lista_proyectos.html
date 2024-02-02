@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Proyectos</title>
+</head>
+<body>
+    <h1>Lista de Proyectos</h1>
+    {% for proyecto in proyectos %}
+        <div>
+            <h2>{{ proyecto.titulo }}</h2>
+            <p>{{ proyecto.descripcion }}</p>
+            <p>Tecnologías: {{ proyecto.tecnologias }}</p>
+            {% if proyecto.imagen %}
+                <img src="{{ proyecto.imagen.url }}" alt="{{ proyecto.titulo }}">
+            {% endif %}
+        </div>
+    {% endfor %}
+</body>
+</html>

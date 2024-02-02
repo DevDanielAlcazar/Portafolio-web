@@ -1,0 +1,18 @@
+<div id="contactame-section">
+    <h2>Contactame</h2>
+    <div id="contact-form-container">
+        <form method="post" action="{% url 'contactame' %}">
+            {% csrf_token %}
+            <label for="id_nombre">Nombre:</label>
+            {{ form.nombre }}
+            <br>
+            <label for="id_email">Email:</label>
+            {{ form.email }}
+            <br>
+            <label for="id_mensaje">Mensaje:</label>
+            {{ form.mensaje }}
+            <br>
+            <button type="submit">Enviar Mensaje</button>
+        </form>
+    </div>
+</div>
