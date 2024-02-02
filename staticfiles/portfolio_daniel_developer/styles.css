@@ -1,0 +1,311 @@
+/* styles.css */
+body {
+    background-image: url('/static/images/background_p_princ.png');
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir toda la página */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 100vh;
+}
+
+
+
+#sidebar {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+#presentation-section {
+    font-family: Arial;
+    text-align: center;
+    margin-bottom: 10%;
+
+}
+
+#presentation-section img {
+    flex: 1;
+    margin-right: 10%;
+    margin-top: 4%;
+    border-radius: 50%;
+    padding: 10%;
+    max-width: 35%;
+    width: 35%; /* Ajusta el tamaño de acuerdo a tus preferencias */
+    height: 45%; /* Ajusta el tamaño de acuerdo a tus preferencias */
+}
+
+#main-menu {
+    flex: 0 0 15%;
+    background-color: #623f8f96; /* Color de fondo del menú */
+    padding: 2%;
+    border-radius: 12%;
+    height: 10%;
+    margin: 4%;
+    max-width: 20%;
+}
+
+#menu-icons {
+    display: none;
+}
+
+#main-menu.hide-text ul {
+    display: none
+}
+
+#main-menu.hide-text #menu-icons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+#main-menu.scrolled {
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: rgba(98, 63, 143, 0.7); /* Cambia el color y la opacidad al hacer scroll */
+    flex-direction: column; /* Cambia la dirección del diseño flex */
+    margin-top: 5%; /* Puedes ajustar esto según tus necesidades */
+    transition: all 0.5s ease; /* Agrega una transición suave */
+  }
+
+#main-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#main-menu li {
+    margin-bottom: 10%;
+    text-align: center;
+    font-family: Arial;
+    
+    
+}
+
+#main-menu a {
+    text-decoration: none;
+    color: #fff; /* Color del texto del menú */
+    font-weight: bold;
+}
+
+#main-menu a:hover {
+    color: #f5ff6a; /* Cambia el color al pasar el mouse sobre los enlaces */
+}
+
+
+#curriculum-vitae h2 {
+    display: block;
+    justify-content: center;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 40%;
+    padding: 1%;
+}
+
+#curriculum-vitae a {
+    display: block;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 40%;
+    padding: 1%;
+    color: #fff;
+    background: linear-gradient(to right, #851a85, #813eb1) ;
+    border-radius: 3%;
+    margin-bottom: 10px;
+    
+}
+
+
+#quien-soy {
+    font-family: Arial;
+    text-align: justify;
+    max-width: 85%;
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    padding: 2%;
+}
+
+#technologies-section {
+    font-family: Arial;
+    text-align: center;
+    margin-top: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#technologies-section h2 {
+    font-family: Arial;
+    color: #000000;
+    margin: auto;
+    padding-right: 60%;
+    margin-bottom: 4%;
+}
+
+.technology-item {
+    flex: 0 0 30%;
+    margin: 1%;
+    text-align: center;
+    
+}
+
+.technology-item img {
+    width: 40%;  /* Ajusta el tamaño según sea necesario */
+    height: auto; /* Ajusta el tamaño según sea necesario */
+    transition: transform 0.3s ease; /* Agrega una transición para suavizar el cambio de tamaño */
+}
+.technology-item:hover img {
+    transform: scale(1.6); /* Aumenta el tamaño al pasar el mouse sobre la imagen */
+}
+
+.technology-item p {
+    font-family: Arial;
+    font-weight: bold;
+    
+}
+
+#achievements-section {
+    font-family: Arial;
+    text-align: center;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; /* Ajusta el espacio entre los elementos */
+}
+
+.achievement-item {
+    width: 45%; /* Establece el ancho de cada certificado */
+    margin: 1%;
+    padding: 20px;
+    border: 1px solid #ddd; /* Añade un borde para separar visualmente los certificados */
+}
+
+.achievement-item h2 {
+    color: #000000;
+}
+
+.achievement-item img {
+    width: 100%; /* Hace que la imagen ocupe todo el ancho del contenedor */
+    height: auto; /* Ajusta la altura automáticamente */
+    margin-bottom: 10px; /* Añade un margen inferior para separar la imagen del texto */
+}
+
+.achievement-item p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.achievement-item a {
+    display: block;
+    margin-top: 10px; /* Añade un margen superior para separar el botón/enlace del texto */
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+.achievement-item a:hover {
+    background-color: #45a049;
+}
+
+
+
+#contactame-section {
+    margin: 10%;
+}
+
+#contact-form-container {
+    display: flex;
+    margin-top: 2%;
+    text-align: left;
+    margin: 5%;
+    justify-content:space-around;
+    /* Otros estilos personalizados según tus preferencias */
+}
+
+#contact-form-container label {
+    margin-right: 2%;
+    padding: 1%;
+    font-family: Arial;
+}
+
+#contact-form-container button {
+    padding: 2%;
+    margin-top: 2%;
+    font-family: Arial;
+    font-weight: bold;
+}
+
+#content #contactame-section form {
+    /* Agrega estilos específicos para el formulario en la página principal */
+    display:block;
+    text-align: left;
+    margin-top: 2%;
+}
+
+
+
+#footer {
+    display: flex;
+    justify-content: space-between;  /* Centra el contenido horizontalmente */
+    align-items: center;      /* Centra el contenido verticalmente */
+    background: linear-gradient(to right, #800080, #4B0082);
+    color: white;
+    text-align: center;
+    padding: 2%;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+#footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    
+    
+}
+
+#footer-text {
+    
+    float: right;
+    
+}
+
+#contact-info {
+    float: left;
+}
+
+
+
+#scroll-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4B0082; /* Color de fondo para el botón */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#scroll-to-top:hover {
+    background-color: #800080; /* Cambia el color al pasar el mouse sobre el botón */
+}
