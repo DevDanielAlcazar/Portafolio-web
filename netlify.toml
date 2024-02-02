@@ -1,3 +1,5 @@
+# netlify.toml
+
 [build]
   publish = "portfolio_daniel_developer/portfolio_daniel_developer"
   functions = "functions"
@@ -7,14 +9,15 @@
   DJANGO_SETTINGS_MODULE = "portfolio_daniel_dev.settings"
   SECRET_KEY = "django-insecure-@z2)p&x4lub&4dv-+p(3f@0%o(p+-=t(2))s61o10)25icodl^"
   DEBUG = "False"
+  GUNICORN_CMD = "gunicorn portfolio_daniel_dev.wsgi:application"
 
 [context.deploy-preview.environment]
   DJANGO_SETTINGS_MODULE = "portfolio_daniel_dev.settings"
-  SECRET_KEY = "your-secret-key-for-deploy-preview"
+  SECRET_KEY = "django-insecure-@z2)p&x4lub&4dv-+p(3f@0%o(p+-=t(2))s61o10)25icodl^"
   DEBUG = "True"
 
 [context.split1]
   command = "python manage.py migrate"
 
-[context.split2]
-  command = "gunicorn portfolio_daniel_dev.wsgi:application"
+[context.production]
+  command = '[ -n "$GUNICORN_CMD" ] && eval "$GUNICORN_CMD"'
