@@ -1,6 +1,5 @@
-# netlify.toml
-
 [build]
+  timeout = 2400
   publish = "portfolio_daniel_developer/portfolio_daniel_developer"
   functions = "functions"
   environment = { DJANGO_SETTINGS_MODULE = "portfolio_daniel_dev.settings" }
