@@ -1,5 +1,5 @@
 [build]
-  command = "python manage.py collectstatic --noinput"
+  command = "python portfolio_daniel_dev/manage.py migrate && python portfolio_daniel_dev/manage.py collectstatic --noinput"
   publish = "portfolio_daniel_dev/portfolio_daniel_developer"
   functions = "functions"
   environment = { DJANGO_SETTINGS_MODULE = "portfolio_daniel_dev.settings" }
