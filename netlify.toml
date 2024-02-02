@@ -1,5 +1,4 @@
 [build]
-  command = "python portfolio_daniel_dev/manage.py collectstatic --noinput"
   publish = "portfolio_daniel_developer/portfolio_daniel_developer"
   functions = "functions"
   environment = { DJANGO_SETTINGS_MODULE = "portfolio_daniel_dev.settings" }
