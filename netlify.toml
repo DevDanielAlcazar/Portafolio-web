@@ -1,22 +1,11 @@
 [build]
-  timeout = 2400
   publish = "portfolio_daniel_developer/portfolio_daniel_developer"
   functions = "functions"
-  environment = { DJANGO_SETTINGS_MODULE = "portfolio_daniel_dev.settings" }
+  command = 'if [ -n "$GUNICORN_CMD" ]; then eval "$GUNICORN_CMD" > gunicorn.log 2>&1; else echo "Gunicorn command not set"; fi'
+  environment = { DJANGO_SETTINGS_MODULE = "portfolio_daniel_dev.settings", SECRET_KEY = "django-insecure-@z2)p&x4lub&4dv-+p(3f@0%o(p+-=t(2))s61o10)25icodl^", DEBUG = "False", GUNICORN_CMD = "gunicorn portfolio_daniel_dev.wsgi:application" }
 
-[context.production.environment]
-  DJANGO_SETTINGS_MODULE = "portfolio_daniel_dev.settings"
-  SECRET_KEY = "django-insecure-@z2)p&x4lub&4dv-+p(3f@0%o(p+-=t(2))s61o10)25icodl^"
-  DEBUG = "False"
-  GUNICORN_CMD = "gunicorn portfolio_daniel_dev.wsgi:application"
-
-[context.deploy-preview.environment]
-  DJANGO_SETTINGS_MODULE = "portfolio_daniel_dev.settings"
-  SECRET_KEY = "django-insecure-@z2)p&x4lub&4dv-+p(3f@0%o(p+-=t(2))s61o10)25icodl^"
-  DEBUG = "True"
+[context.deploy-preview]
+  environment = { DJANGO_SETTINGS_MODULE = "portfolio_daniel_dev.settings", SECRET_KEY = "django-insecure-@z2)p&x4lub&4dv-+p(3f@0%o(p+-=t(2))s61o10)25icodl^", DEBUG = "True" }
 
 [context.split1]
   command = "python manage.py migrate"
-
-[context.production]
-  command = 'if [ -n "$GUNICORN_CMD" ]; then eval "$GUNICORN_CMD" > gunicorn.log 2>&1; else echo "Gunicorn command not set"; fi'
