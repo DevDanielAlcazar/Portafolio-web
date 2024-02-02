@@ -19,4 +19,4 @@
   command = "python manage.py migrate"
 
 [context.production]
-  command = '[ -n "$GUNICORN_CMD" ] && eval "$GUNICORN_CMD"'
+  command = 'if [ -n "$GUNICORN_CMD" ]; then eval "$GUNICORN_CMD" > gunicorn.log 2>&1; else echo "Gunicorn command not set"; fi'
